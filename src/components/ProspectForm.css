@@ -1,0 +1,224 @@
+/* Overlay */
+.prospect-form-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  padding: 24px;
+  animation: overlayFadeIn 0.2s ease-out;
+}
+
+@keyframes overlayFadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.prospect-form-modal {
+  background: #f8fafc;
+  border-radius: 12px;
+  width: 100%;
+  max-width: 560px;
+  max-height: calc(100vh - 48px);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+  animation: modalSlideIn 0.25s ease-out;
+}
+
+@keyframes modalSlideIn {
+  from {
+    opacity: 0;
+    transform: scale(0.96) translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+/* Header */
+.prospect-form-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 24px;
+  border-bottom: 1px solid #e2e8f0;
+  background: #fff;
+  flex-shrink: 0;
+}
+
+.prospect-form-header h2 {
+  margin: 0;
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #111827;
+}
+
+.prospect-form-close {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  padding: 0;
+  background: transparent;
+  border: none;
+  border-radius: 8px;
+  color: #6b7280;
+  cursor: pointer;
+  transition: background 0.15s, color 0.15s;
+}
+
+.prospect-form-close:hover {
+  background: #f3f4f6;
+  color: #111827;
+}
+
+/* Form body */
+.prospect-form {
+  padding: 24px;
+  overflow-y: auto;
+  flex: 1;
+}
+
+.prospect-form .form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  margin-bottom: 16px;
+}
+
+.prospect-form .form-row.form-row-3 {
+  grid-template-columns: 1fr 1fr 1fr;
+}
+
+.prospect-form .form-row.form-row-full {
+  grid-template-columns: 1fr;
+}
+
+.prospect-form .form-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.prospect-form .form-group label {
+  font-weight: 600;
+  color: #374151;
+  margin-bottom: 6px;
+  font-size: 0.875rem;
+}
+
+.prospect-form .form-group input,
+.prospect-form .form-group select,
+.prospect-form .form-group textarea {
+  padding: 10px 12px;
+  border: 1px solid #d1d5db;
+  border-radius: 8px;
+  font-size: 0.95rem;
+  background: #fff;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.prospect-form .form-group input:focus,
+.prospect-form .form-group select:focus,
+.prospect-form .form-group textarea:focus {
+  outline: none;
+  border-color: #3b82f6;
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+}
+
+.prospect-form .form-group textarea {
+  resize: vertical;
+  min-height: 80px;
+}
+
+/* Date inputs with icon */
+.form-group-date .input-with-icon {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.form-group-date .input-with-icon .input-icon {
+  flex-shrink: 0;
+  color: #6b7280;
+}
+
+.form-group-date .input-with-icon input[type="date"] {
+  flex: 1;
+  min-width: 0;
+}
+
+.form-group-date .input-with-icon .time-input-inline {
+  flex: 0 0 80px;
+  min-width: 70px;
+}
+
+/* Actions */
+.form-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 12px;
+  margin-top: 24px;
+  padding-top: 20px;
+  border-top: 1px solid #e2e8f0;
+  flex-shrink: 0;
+}
+
+.btn-cancel {
+  padding: 10px 20px;
+  background: #f3f4f6;
+  color: #374151;
+  border: 1px solid #d1d5db;
+  border-radius: 8px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.15s, border-color 0.15s;
+}
+
+.btn-cancel:hover {
+  background: #e5e7eb;
+  border-color: #9ca3af;
+}
+
+.btn-submit {
+  padding: 10px 24px;
+  background: #1f2937;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.15s, transform 0.1s;
+}
+
+.btn-submit:hover {
+  background: #111827;
+  transform: translateY(-1px);
+}
+
+.btn-submit:active {
+  transform: translateY(0);
+}
+
+@media (max-width: 640px) {
+  .prospect-form .form-row,
+  .prospect-form .form-row.form-row-3 {
+    grid-template-columns: 1fr;
+  }
+
+  .prospect-form-modal {
+    max-height: 90vh;
+  }
+}

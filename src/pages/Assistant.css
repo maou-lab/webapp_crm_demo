@@ -1,0 +1,45 @@
+.assistant-page {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 400px;
+}
+
+.assistant-placeholder {
+  text-align: center;
+  padding: 48px;
+  background: #fff;
+  border-radius: 12px;
+  border: 1px solid #e5e7eb;
+  max-width: 360px;
+}
+
+.assistant-icon {
+  width: 64px;
+  height: 64px;
+  margin: 0 auto 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #f3f4f6;
+  border-radius: 16px;
+  color: #6b7280;
+}
+
+.assistant-icon svg {
+  width: 32px;
+  height: 32px;
+}
+
+.assistant-placeholder h2 {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #111827;
+  margin: 0 0 8px 0;
+}
+
+.assistant-placeholder p {
+  font-size: 0.95rem;
+  color: #6b7280;
+  margin: 0;
+}
