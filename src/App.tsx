@@ -14,6 +14,8 @@ import {
 } from './lib/airtable';
 import './App.css';
 
+type Theme = 'light' | 'dark';
+
 function App() {
   const [currentPage, setCurrentPage] = useState<Page>('dashboard');
   const [prospects, setProspects] = useState<Prospect[]>([]);
@@ -22,6 +24,22 @@ function App() {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
   const [refreshing, setRefreshing] = useState(false);
+  const [theme, setTheme] = useState<Theme>(() => {
+    if (typeof window !== 'undefined') {
+      const saved = localStorage.getItem('crm-theme') as Theme | null;
+      if (saved === 'light' || saved === 'dark') return saved;
+    }
+    return 'light';
+  });
+
+  useEffect(() => {
+    document.documentElement.setAttribute('data-theme', theme);
+    localStorage.setItem('crm-theme', theme);
+  }, [theme]);
+
+  const toggleTheme = useCallback(() => {
+    setTheme(prev => (prev === 'light' ? 'dark' : 'light'));
+  }, []);
 
   const useAirtable = isAirtableConfigured();
 
@@ -199,7 +217,7 @@ function App() {
   }
 
   return (
-    <Layout currentPage={currentPage} onNavigate={setCurrentPage}>
+    <Layout currentPage={currentPage} onNavigate={setCurrentPage} theme={theme} onThemeToggle={toggleTheme}>
       {error && (
         <div className="app-error" role="alert">
           {error}

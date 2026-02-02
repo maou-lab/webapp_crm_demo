@@ -9,12 +9,13 @@
 .kanban-column {
   min-width: 300px;
   max-width: 300px;
-  background: #f8fafc;
+  background: var(--bg-page);
   border-radius: 12px;
   padding: 16px;
   display: flex;
   flex-direction: column;
-  border: 1px solid #e2e8f0;
+  border: 1px solid var(--border);
+  transition: background-color 0.2s, border-color 0.2s;
 }
 
 .kanban-column-header {
@@ -23,7 +24,8 @@
   gap: 10px;
   margin-bottom: 16px;
   padding-bottom: 12px;
-  border-bottom: 1px solid #e2e8f0;
+  border-bottom: 1px solid var(--border);
+  transition: border-color 0.2s;
 }
 
 .kanban-column-dot {
@@ -36,17 +38,19 @@
 .kanban-column-header h2 {
   font-size: 1rem;
   font-weight: 700;
-  color: #1e293b;
+  color: var(--text-primary);
   margin: 0;
   display: flex;
   align-items: center;
   gap: 6px;
+  transition: color 0.2s;
 }
 
 .kanban-column-count {
   font-weight: 600;
-  color: #64748b;
+  color: var(--text-secondary);
   font-size: 0.95rem;
+  transition: color 0.2s;
 }
 
 .kanban-column-content {
@@ -63,15 +67,15 @@
 }
 
 .kanban-column-content::-webkit-scrollbar-track {
-  background: #f1f1f1;
+  background: var(--bg-input);
   border-radius: 10px;
 }
 
 .kanban-column-content::-webkit-scrollbar-thumb {
-  background: #888;
+  background: var(--text-muted);
   border-radius: 10px;
 }
 
 .kanban-column-content::-webkit-scrollbar-thumb:hover {
-  background: #555;
+  background: var(--text-secondary);
 }

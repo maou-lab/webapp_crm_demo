@@ -54,6 +54,8 @@ export default function ProspectCard({
   const [rdvDate, setRdvDate] = useState(() => new Date().toISOString().split('T')[0]);
   const [rdvTime, setRdvTime] = useState('10:00');
   const [rdvSending, setRdvSending] = useState(false);
+  const [showRappelPopup, setShowRappelPopup] = useState(false);
+  const [rappelDate, setRappelDate] = useState(() => new Date().toISOString().split('T')[0]);
 
   const formatDate = (date: string | null) => {
     if (!date) return '';
@@ -74,7 +76,8 @@ export default function ProspectCard({
         break;
       }
       case 'rappel':
-        onUpdate(prospect.id, { dateRappel: today, status: 'rappel-prevoir' });
+        setRappelDate(prospect.dateRappel || today);
+        setShowRappelPopup(true);
         break;
       case 'rdv-planifie':
         setRdvDate(new Date().toISOString().split('T')[0]);
@@ -94,6 +97,12 @@ export default function ProspectCard({
 
   const handleFieldChange = (field: 'dateRappel' | 'dateRdv' | 'heureRdv', value: string) => {
     onUpdate(prospect.id, { [field]: value || null });
+  };
+
+  const confirmRappel = () => {
+    if (!rappelDate) return;
+    onUpdate(prospect.id, { dateRappel: rappelDate, status: 'rappel-prevoir' });
+    setShowRappelPopup(false);
   };
 
   const confirmRdv = async () => {
@@ -321,6 +330,43 @@ export default function ProspectCard({
               disabled={rdvSending || !rdvDate}
             >
               {rdvSending ? 'Envoi…' : 'Confirmer'}
+            </button>
+          </div>
+        </div>
+      </div>
+    )}
+
+    {showRappelPopup && (
+      <div className="rdv-popup-overlay" onClick={() => setShowRappelPopup(false)}>
+        <div className="rdv-popup" onClick={e => e.stopPropagation()}>
+          <h3 className="rdv-popup-title">Date de rappel</h3>
+          <p className="rdv-popup-subtitle">{prospect.nomPrenom}</p>
+          <div className="rdv-popup-fields">
+            <div className="rdv-popup-group">
+              <label>Date de rappel</label>
+              <input
+                type="date"
+                value={rappelDate}
+                onChange={e => setRappelDate(e.target.value)}
+                className="rdv-popup-input"
+              />
+            </div>
+          </div>
+          <div className="rdv-popup-actions">
+            <button
+              type="button"
+              className="rdv-popup-btn rdv-popup-cancel"
+              onClick={() => setShowRappelPopup(false)}
+            >
+              Annuler
+            </button>
+            <button
+              type="button"
+              className="rdv-popup-btn rdv-popup-confirm"
+              onClick={confirmRappel}
+              disabled={!rappelDate}
+            >
+              Confirmer
             </button>
           </div>
         </div>

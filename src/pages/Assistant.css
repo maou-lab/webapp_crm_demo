@@ -8,10 +8,11 @@
 .assistant-placeholder {
   text-align: center;
   padding: 48px;
-  background: #fff;
+  background: var(--bg-card);
   border-radius: 12px;
-  border: 1px solid #e5e7eb;
+  border: 1px solid var(--border-light);
   max-width: 360px;
+  transition: background-color 0.2s, border-color 0.2s;
 }
 
 .assistant-icon {
@@ -21,9 +22,10 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  background: #f3f4f6;
+  background: var(--bg-input);
   border-radius: 16px;
-  color: #6b7280;
+  color: var(--text-muted);
+  transition: background-color 0.2s, color 0.2s;
 }
 
 .assistant-icon svg {
@@ -34,12 +36,14 @@
 .assistant-placeholder h2 {
   font-size: 1.25rem;
   font-weight: 600;
-  color: #111827;
+  color: var(--text-primary);
   margin: 0 0 8px 0;
+  transition: color 0.2s;
 }
 
 .assistant-placeholder p {
   font-size: 0.95rem;
-  color: #6b7280;
+  color: var(--text-secondary);
   margin: 0;
+  transition: color 0.2s;
 }

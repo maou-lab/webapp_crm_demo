@@ -10,14 +10,16 @@
 .dashboard-header h1 {
   font-size: 1.75rem;
   font-weight: 700;
-  color: #111827;
+  color: var(--text-primary);
   margin: 0 0 4px 0;
+  transition: color 0.2s;
 }
 
 .dashboard-subtitle {
   font-size: 0.95rem;
-  color: #6b7280;
+  color: var(--text-secondary);
   margin: 0;
+  transition: color 0.2s;
 }
 
 .dashboard-cards {
@@ -28,18 +30,19 @@
 }
 
 .stat-card {
-  background: #fff;
+  background: var(--bg-card);
   border-radius: 12px;
   padding: 20px;
   display: flex;
   align-items: center;
   gap: 16px;
-  border: 1px solid #e5e7eb;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+  border: 1px solid var(--border-light);
+  box-shadow: 0 1px 3px var(--shadow);
+  transition: background-color 0.2s, border-color 0.2s;
 }
 
 .stat-card-primary .stat-card-icon {
-  background: #2563eb;
+  background: var(--accent);
   color: #fff;
 }
 
@@ -50,8 +53,9 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  background: #f3f4f6;
-  color: #6b7280;
+  background: var(--bg-input);
+  color: var(--text-secondary);
+  transition: background-color 0.2s, color 0.2s;
 }
 
 .stat-card-icon svg {
@@ -88,13 +92,15 @@
 .stat-card-value {
   font-size: 1.5rem;
   font-weight: 700;
-  color: #111827;
+  color: var(--text-primary);
+  transition: color 0.2s;
 }
 
 .stat-card-label {
   font-size: 0.85rem;
-  color: #6b7280;
+  color: var(--text-secondary);
   font-weight: 500;
+  transition: color 0.2s;
 }
 
 .dashboard-section-row {
@@ -109,18 +115,20 @@
 }
 
 .dashboard-list {
-  background: #fff;
+  background: var(--bg-card);
   border-radius: 10px;
-  border: 1px solid #e5e7eb;
+  border: 1px solid var(--border-light);
   overflow: hidden;
+  transition: background-color 0.2s, border-color 0.2s;
 }
 
 .dashboard-list-empty {
   padding: 24px;
   margin: 0;
   font-size: 0.9rem;
-  color: #6b7280;
+  color: var(--text-secondary);
   text-align: center;
+  transition: color 0.2s;
 }
 
 .dashboard-list-item {
@@ -129,7 +137,7 @@
   align-items: center;
   gap: 8px 16px;
   padding: 14px 18px;
-  border-bottom: 1px solid #f3f4f6;
+  border-bottom: 1px solid var(--border-light);
   transition: background 0.15s;
 }
 
@@ -138,7 +146,7 @@
 }
 
 .dashboard-list-item:hover {
-  background: #f9fafb;
+  background: var(--bg-hover);
 }
 
 .dashboard-list-item-main {
@@ -152,7 +160,8 @@
 .dashboard-list-item-name {
   font-size: 0.95rem;
   font-weight: 600;
-  color: #111827;
+  color: var(--text-primary);
+  transition: color 0.2s;
 }
 
 .dashboard-list-item-date {
@@ -160,7 +169,8 @@
   align-items: center;
   gap: 6px;
   font-size: 0.8rem;
-  color: #6b7280;
+  color: var(--text-secondary);
+  transition: color 0.2s;
 }
 
 .dashboard-list-item-date svg {
@@ -174,7 +184,8 @@
 
 .dashboard-list-item-detail {
   font-size: 0.85rem;
-  color: #6b7280;
+  color: var(--text-secondary);
+  transition: color 0.2s;
 }
 
 .dashboard-list-item-badge {
@@ -182,9 +193,10 @@
   font-weight: 600;
   padding: 4px 10px;
   border-radius: 999px;
-  background: #f3f4f6;
-  color: #374151;
+  background: var(--bg-input);
+  color: var(--text-primary);
   text-transform: capitalize;
+  transition: background-color 0.2s, color 0.2s;
 }
 
 .dashboard-section {
@@ -194,8 +206,9 @@
 .dashboard-section h2 {
   font-size: 1.15rem;
   font-weight: 600;
-  color: #374151;
+  color: var(--text-secondary);
   margin: 0 0 16px 0;
+  transition: color 0.2s;
 }
 
 .dashboard-status-grid {
@@ -205,14 +218,15 @@
 }
 
 .status-card {
-  background: #fff;
+  background: var(--bg-card);
   border-radius: 10px;
   padding: 16px;
   display: flex;
   align-items: center;
   gap: 12px;
-  border: 1px solid #e5e7eb;
-  border-left: 4px solid #3b82f6;
+  border: 1px solid var(--border-light);
+  border-left: 4px solid var(--accent);
+  transition: background-color 0.2s, border-color 0.2s;
 }
 
 .status-card-dot {
@@ -232,15 +246,17 @@
 .status-card-value {
   font-size: 1.25rem;
   font-weight: 700;
-  color: #111827;
+  color: var(--text-primary);
+  transition: color 0.2s;
 }
 
 .status-card-label {
   font-size: 0.8rem;
-  color: #6b7280;
+  color: var(--text-secondary);
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
+  transition: color 0.2s;
 }
 
 .dashboard-type-grid {
@@ -250,44 +266,49 @@
 }
 
 .type-card {
-  background: #fff;
+  background: var(--bg-card);
   border-radius: 10px;
   padding: 18px;
-  border: 1px solid #e5e7eb;
+  border: 1px solid var(--border-light);
+  transition: background-color 0.2s, border-color 0.2s;
 }
 
 .type-card-label {
   display: block;
   font-size: 0.9rem;
   font-weight: 600;
-  color: #374151;
+  color: var(--text-secondary);
   margin-bottom: 8px;
+  transition: color 0.2s;
 }
 
 .type-card-value {
   font-size: 1.5rem;
   font-weight: 700;
-  color: #111827;
+  color: var(--text-primary);
+  transition: color 0.2s;
 }
 
 .type-card-bar {
   height: 8px;
-  background: #f3f4f6;
+  background: var(--bg-input);
   border-radius: 4px;
   overflow: hidden;
   margin: 10px 0 6px 0;
+  transition: background-color 0.2s;
 }
 
 .type-card-bar-fill {
   height: 100%;
-  background: #2563eb;
+  background: var(--accent);
   border-radius: 4px;
-  transition: width 0.3s ease;
+  transition: width 0.3s ease, background-color 0.2s;
 }
 
 .type-card-pct {
   font-size: 0.8rem;
-  color: #6b7280;
+  color: var(--text-secondary);
+  transition: color 0.2s;
 }
 
 @media (max-width: 768px) {

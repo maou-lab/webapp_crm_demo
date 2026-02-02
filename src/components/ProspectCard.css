@@ -1,14 +1,14 @@
 .prospect-card {
-  background: #fff;
+  background: var(--bg-card);
   border-radius: 10px;
   padding: 16px;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
-  transition: box-shadow 0.2s;
-  border: 1px solid #e5e7eb;
+  box-shadow: 0 1px 3px var(--shadow);
+  transition: box-shadow 0.2s, background-color 0.2s, border-color 0.2s;
+  border: 1px solid var(--border-light);
 }
 
 .prospect-card:hover {
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 12px var(--shadow-strong);
 }
 
 .card-header {
@@ -21,10 +21,11 @@
 .card-header h3 {
   font-size: 1.05rem;
   font-weight: 700;
-  color: #111827;
+  color: var(--text-primary);
   margin: 0;
   flex: 1;
   line-height: 1.3;
+  transition: color 0.2s;
 }
 
 .card-header-actions {
@@ -43,14 +44,14 @@
   background: transparent;
   border: none;
   border-radius: 6px;
-  color: #6b7280;
+  color: var(--text-muted);
   cursor: pointer;
   transition: background 0.15s, color 0.15s;
 }
 
 .btn-icon:hover {
-  background: #f3f4f6;
-  color: #374151;
+  background: var(--bg-hover);
+  color: var(--text-primary);
 }
 
 .btn-icon-danger:hover {
@@ -96,7 +97,8 @@
   gap: 8px;
   margin-bottom: 6px;
   font-size: 0.85rem;
-  color: #374151;
+  color: var(--text-primary);
+  transition: color 0.2s;
 }
 
 .info-row span {
@@ -107,7 +109,8 @@
 
 .info-icon {
   flex-shrink: 0;
-  color: #9ca3af;
+  color: var(--text-muted);
+  transition: color 0.2s;
 }
 
 .info-icon-orange {
@@ -122,10 +125,13 @@
 .date-input,
 .time-input {
   padding: 4px 8px;
-  border: 1px solid #d1d5db;
+  border: 1px solid var(--border);
   border-radius: 6px;
   font-size: 0.85rem;
   max-width: 120px;
+  background: var(--bg-input);
+  color: var(--text-primary);
+  transition: border-color 0.2s, background-color 0.2s, color 0.2s;
 }
 
 .time-input {
@@ -145,7 +151,8 @@
   flex-wrap: wrap;
   gap: 6px;
   padding-top: 12px;
-  border-top: 1px solid #e5e7eb;
+  border-top: 1px solid var(--border-light);
+  transition: border-color 0.2s;
 }
 
 .btn-card {
@@ -176,8 +183,9 @@
 }
 
 .btn-pas-repondu {
-  background: #f3f4f6;
-  color: #4b5563;
+  background: var(--bg-input);
+  color: var(--text-secondary);
+  transition: background-color 0.2s, color 0.2s;
 }
 
 .btn-rappel {
@@ -228,13 +236,14 @@
 }
 
 .rdv-popup {
-  background: #fff;
+  background: var(--bg-card);
   border-radius: 12px;
   padding: 24px;
   min-width: 280px;
   max-width: 360px;
-  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 20px 50px var(--shadow-strong);
   animation: rdv-slideIn 0.25s ease-out;
+  transition: background-color 0.2s;
 }
 
 @keyframes rdv-slideIn {
@@ -252,13 +261,15 @@
   margin: 0 0 4px 0;
   font-size: 1.2rem;
   font-weight: 700;
-  color: #111827;
+  color: var(--text-primary);
+  transition: color 0.2s;
 }
 
 .rdv-popup-subtitle {
   margin: 0 0 20px 0;
   font-size: 0.9rem;
-  color: #6b7280;
+  color: var(--text-secondary);
+  transition: color 0.2s;
 }
 
 .rdv-popup-fields {
@@ -277,14 +288,18 @@
 .rdv-popup-group label {
   font-size: 0.85rem;
   font-weight: 600;
-  color: #374151;
+  color: var(--text-secondary);
+  transition: color 0.2s;
 }
 
 .rdv-popup-input {
   padding: 10px 12px;
-  border: 1px solid #d1d5db;
+  border: 1px solid var(--border);
   border-radius: 8px;
   font-size: 1rem;
+  background: var(--bg-input);
+  color: var(--text-primary);
+  transition: border-color 0.2s, background-color 0.2s, color 0.2s;
 }
 
 .rdv-popup-input:focus {
@@ -314,13 +329,14 @@
 }
 
 .rdv-popup-cancel {
-  background: #f3f4f6;
-  color: #374151;
-  border: 1px solid #e5e7eb;
+  background: var(--bg-input);
+  color: var(--text-primary);
+  border: 1px solid var(--border-light);
+  transition: background-color 0.2s, color 0.2s, border-color 0.2s;
 }
 
 .rdv-popup-cancel:hover:not(:disabled) {
-  background: #e5e7eb;
+  background: var(--bg-hover);
 }
 
 .rdv-popup-confirm {
