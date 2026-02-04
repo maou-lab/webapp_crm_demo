@@ -85,3 +85,4 @@ npm run build
 - TypeScript
 - Vite
 - CSS3 (design moderne avec gradients)
+# crm_pergopose
